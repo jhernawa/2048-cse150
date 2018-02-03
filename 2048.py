@@ -31,17 +31,22 @@ class Game:
 		self.tileMatrix = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
 		self.undoMat = []
 	def loop(self, fromLoaded = False):
-		auto = False
+		auto = True
 		if not fromLoaded:
 			self.placeRandomTile()
 			self.placeRandomTile()
+			#self.tileMatrix[0][0] = 64                        
+			#self.tileMatrix[0][1] = 32
+			#self.tileMatrix[1][0] = 2
+			#self.tileMatrix[2][0] = 2
+			#self.tileMatrix[3][0] = 16
 		self.printMatrix()
 		while True:
 			if auto:
 				if self.checkIfCanGo():
 					#Hint: Check the use of deepcopy
-					ai = Gametree(copy.deepcopy(self.tileMatrix), 3)
-					direction = ai.compute_decision()
+					ai = Gametree(copy.deepcopy(self.tileMatrix), self.total_points, 3)
+					direction = ai.compute_decision()  # string 'up', 'down', 'left', 'right'
 					self.move(direction)
 					#comment out the following line if you want to run AI till the end
 					#auto = False
@@ -58,6 +63,7 @@ class Game:
 					if event.type == KEYDOWN:
 						if self.isArrow(event.key):
 							direction = self.getRotations(event.key)
+							print("pencet ini")
 							self.move(direction)
 				else:
 					self.printGameOver()
@@ -107,12 +113,12 @@ class Game:
 		while True:
 			i = random.randint(0,self.board_size-1)
 			j = random.randint(0,self.board_size-1)
-			if self.tileMatrix[i][j] == 0:
+			if self.tileMatrix[i][j] == 0:  # if empty
 				break
 		self.tileMatrix[i][j] = 2
 	def moveTiles(self):
-		tm = self.tileMatrix
-		for i in range(0, self.board_size):
+		tm = self.tileMatrix            ##YG INI
+		for i in range(0, self.board_size):  ## SELF.BOARD_SIZENYA ITU SIZE MATRIX SELF.TILEMATRIX KN?
 			for j in range(0, self.board_size - 1):
 				while tm[i][j] == 0 and sum(tm[i][j:]) > 0:
 					for k in range(j, self.board_size - 1):
