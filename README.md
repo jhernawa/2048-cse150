@@ -1,3 +1,71 @@
+Jesslyn Hernawan
+A14210503
+
+Answer:
+1) Random Move
+   Trial 1:
+  -Highest tile: 128
+  -End score: 2076
+
+   Trial 2:
+  -Highest tile: 256
+  -End score: 2744
+
+   Trial 3:
+  -Highest tile: 64
+  -End score: 992
+
+   Trial 4:
+  -Highest tile: 128
+  -End score: 1456
+
+   Trial 5:
+  -Highest tile: 128
+  -End score: 2284
+
+2) Depth-1
+   Trial 1:
+  -Highest tile: 256
+  -End score: 3200
+
+   Trial 2:
+  -Highest tile: 256
+  -End score: 2956
+
+   Trial 3:
+  -Highest tile: 128
+  -End score: 1992
+
+   Trial 4:
+  -Highest tile: 256 
+  -End score: 3228
+
+   Trial 5:
+  -Highest tile: 256
+  -End score: 3624
+
+3) Depth-3
+   Trial 1:
+  -Highest tile: 1024
+  -End score: 15904
+
+   Trial 2:
+  -Highest tile: 1024
+  -End score: 12492
+
+   Trial 3:
+  -Highest tile: 1024
+  -End score: 12488
+
+   Trial 4:
+  -Highest tile: 512
+  -End score: 6988
+
+   Trial 5:
+  -Highest tile: 512
+  -End score: 7308
+
+
 Assignment 2: 2048
 =========
 
